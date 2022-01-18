@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss"
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Profile from "./Pages/Profile";
+import ErrorPage from "./Pages/ErrorPage";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const location = useLocation();
+
+    return (
+        <div className="App">
+            <Header />
+
+            <AnimatePresence exitBeforeEnter initial={false}>
+                <Routes location={location} key={location.pathname}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/profile/:username" element={<Profile />} />
+                    <Route path="*" element={<ErrorPage />} />
+                </Routes>
+            </AnimatePresence>
+
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
