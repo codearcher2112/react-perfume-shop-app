@@ -1,5 +1,6 @@
 import React from "react";
 import { BasketState } from "../../context/Context";
+import { Link } from "react-router-dom";
 
 const ProductItem = ({prod}) => {
     const {
@@ -11,9 +12,9 @@ const ProductItem = ({prod}) => {
         <div className="product__item">
             <div className="product__item-img-wrapper">
                 <div className="product__item-img-overlay">
-                    <a className="product__item-link" href="#">
+                    <Link className="product__item-link" to="/product">
                         <span className="product__item-link-txt">More Info</span>
-                    </a>
+                    </Link>
                 </div>
 
                 <img className="product__item-img" src={prod.imgSrc} alt={prod.name} />
@@ -31,18 +32,18 @@ const ProductItem = ({prod}) => {
 
                     {
                         prod.fastDelivery ? (
-                            <div className="products__item-delivery">
+                            <div className="product__item-delivery">
                                 Fast Delivery
                             </div>
                         ) : (
-                            <div className="products__item-delivery">
+                            <div className="product__item-delivery">
                                 2 Days Delivery
                             </div>
                         )
                     }
 
                     <div className="product__item-price">
-                        {prod.price}
+                        {prod.price}$
                     </div>
                 </div>
 

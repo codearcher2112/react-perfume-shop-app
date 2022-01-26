@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import Header from "./components/Header/Header";
+import AdSection from "./components/AdSection/AdSection";
 import Footer from "./components/Footer/Footer";
 
 import Home from "./pages/Home";
@@ -11,7 +12,6 @@ import Contact from "./pages/Contact";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
-import ProductList from "./pages/ProductList";
 import Product from "./pages/Product";
 import Basket from "./pages/Basket";
 import ErrorPage from "./pages/ErrorPage";
@@ -32,12 +32,13 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/profile/:username" element={<Profile />} />
-                    <Route path="/products/:category" element={<ProductList />} />
                     <Route path="/product/:id" element={<Product />} />
                     <Route path="/basket" element={<Basket />} />
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </AnimatePresence>
+
+            <AdSection />
 
             <Footer />
         </div>

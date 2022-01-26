@@ -21,7 +21,7 @@ const BasketDropdown = ({basket, dispatch}) => {
                                                 {prod.name}
                                             </span>
                                             <span className="header__basket-dropdown-item-info-price">
-                                                {prod.price}
+                                                {prod.price}$
                                             </span>
                                         </span>
 

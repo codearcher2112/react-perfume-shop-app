@@ -1,9 +1,11 @@
 import React from "react";
 import { BasketState } from "../context/Context";
+import Banner from "../components/Banner/Banner";
+import Social from "../components/Social/Social";
 import ProductItem from "../components/ProductItem/ProductItem";
 import { motion } from "framer-motion";
 // Remove below after add data
-import img from "../assets/images/chanel-coco-mademoiselle.png";
+import bgImgHome from "../assets/images/chanel-coco-mademoiselle.png";
 
 const Home = () => {
     const {
@@ -16,32 +18,39 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
         >
-            <div className="banner">
-                <div className="container banner__container">
-                    <h1 className="banner__title">
-                        <span>Best Aromatic</span> Perfumes ever!
-                    </h1>
-
-                    <div className="banner__img-wrapper">
-                        <img className="banner__img"
-                             src={img}
-                             alt=""
-                        />
-                    </div>
-                </div>
-            </div>
+            <Banner highlightedTitle="Best Aromatic" simpleTitle="Perfumes ever!" bgImg={bgImgHome} />
 
             <section className="products">
-                <div className="container">
-                    <div className="products-wrapper">
+                <div className="container products__container">
+                    <div className="products__wrapper">
                         {
                             products.map((prod) => {
-                                return <ProductItem key={prod.id} prod={prod} />
+                                return (
+                                    <ProductItem key={prod.id} prod={prod} />
+                                )
                             })
                         }
                     </div>
+
+                    <aside className='aside'>
+                        <div className="products__filter">
+                            <div className="products__filter-row">
+                                <input type="text" placeholder="Search For Product"/>
+                            </div>
+
+                            <div className="products__filter-row">
+                                Filter Option 1
+                            </div>
+
+                            <div className="products__filter-row">
+                                Filter Option 2
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </section>
+
+            <Social />
         </motion.main>
     )
 }

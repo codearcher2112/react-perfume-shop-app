@@ -9,7 +9,7 @@ const Product = () => {
             transition={{ duration: 0.6 }}
         >
             <div className="container">
-                <h1>Product</h1>
+                <h1>Product Page</h1>
             </div>
         </motion.main>
     )

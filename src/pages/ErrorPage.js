@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Banner from "../components/Banner/Banner";
 
 const ErrorPage = () => {
     return (
@@ -8,9 +9,7 @@ const ErrorPage = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
         >
-            <div className="container">
-                <h1>Error page not found!</h1>
-            </div>
+            <Banner highlightedTitle="Error page" simpleTitle="not found!" />
         </motion.main>
     )
 }
