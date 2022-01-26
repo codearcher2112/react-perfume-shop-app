@@ -1,176 +1,56 @@
 import React from "react";
+import { BasketState } from "../context/Context";
+import Banner from "../components/Banner/Banner";
+import Social from "../components/Social/Social";
+import ProductItem from "../components/ProductItem/ProductItem";
 import { motion } from "framer-motion";
-
-import img from "../assets/images/chanel-coco-mademoiselle.png";
-import imgCard from "../assets/images/PikPng.com_perfume-png_1269742.png";
+// Remove below after add data
+import bgImgHome from "../assets/images/chanel-coco-mademoiselle.png";
 
 const Home = () => {
+    const {
+        state: { products }
+    } = BasketState();
+
     return (
         <motion.main
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
         >
-            <div className="banner">
-                <div className="container banner__container">
-                    <h1 className="banner__title">
-                        <span>Best Aromatic</span> Perfumes ever!
-                    </h1>
+            <Banner highlightedTitle="Best Aromatic" simpleTitle="Perfumes ever!" bgImg={bgImgHome} />
 
-                    <div className="banner__img-wrapper">
-                        <img className="banner__img"
-                             src={img}
-                             alt=""
-                        />
+            <section className="products">
+                <div className="container products__container">
+                    <div className="products__wrapper">
+                        {
+                            products.map((prod) => {
+                                return (
+                                    <ProductItem key={prod.id} prod={prod} />
+                                )
+                            })
+                        }
                     </div>
-                </div>
-            </div>
 
-            <section className="cards">
-                <div className="container">
-                    <div className="cards-wrapper">
-                        <div className="card__item">
-                            <div className="card__item-img-wrapper">
-                                <div className="card__item-img-overlay">
-                                    <a className="card__item-link" href="#">
-                                        <span className="card__item-link-txt">More Info</span>
-                                    </a>
-                                </div>
-
-                                <img className="card__item-img" src={imgCard} alt=""/>
+                    <aside className='aside'>
+                        <div className="products__filter">
+                            <div className="products__filter-row">
+                                <input type="text" placeholder="Search For Product"/>
                             </div>
 
-                            <div className="card__item-info-wrapper">
-                                <div className="card__item-info">
-                                    <h4 className="card__item-title">
-                                        Lorem ipsum dolor sit.
-                                    </h4>
+                            <div className="products__filter-row">
+                                Filter Option 1
+                            </div>
 
-                                    <p className="card__item-info-txt">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, veniam?
-                                    </p>
-
-                                    <div className="card__item-price">
-                                        $20
-                                    </div>
-                                </div>
-
-                                <button className="card__item-add-btn">
-                                    <span className="card__item-add-btn-txt">
-                                        <i className="fa fa-shopping-bag" aria-hidden="true"></i>
-                                        Add to basket
-                                    </span>
-                                </button>
+                            <div className="products__filter-row">
+                                Filter Option 2
                             </div>
                         </div>
-
-                        <div className="card__item">
-                            <div className="card__item-img-wrapper">
-                                <div className="card__item-img-overlay">
-                                    <a className="card__item-link" href="#">
-                                        <span className="card__item-link-txt">More Info</span>
-                                    </a>
-                                </div>
-
-                                <img className="card__item-img" src={imgCard} alt=""/>
-                            </div>
-
-                            <div className="card__item-info-wrapper">
-                                <div className="card__item-info">
-                                    <h4 className="card__item-title">
-                                        Lorem ipsum dolor sit.
-                                    </h4>
-
-                                    <p className="card__item-info-txt">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, veniam?
-                                    </p>
-
-                                    <div className="card__item-price">
-                                        $20
-                                    </div>
-                                </div>
-
-                                <button className="card__item-add-btn">
-                                    <span className="card__item-add-btn-txt">
-                                        <i className="fa fa-shopping-bag" aria-hidden="true"></i>
-                                        Add to basket
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className="card__item">
-                            <div className="card__item-img-wrapper">
-                                <div className="card__item-img-overlay">
-                                    <a className="card__item-link" href="#">
-                                        <span className="card__item-link-txt">More Info</span>
-                                    </a>
-                                </div>
-
-                                <img className="card__item-img" src={imgCard} alt=""/>
-                            </div>
-
-                            <div className="card__item-info-wrapper">
-                                <div className="card__item-info">
-                                    <h4 className="card__item-title">
-                                        Lorem ipsum dolor sit.
-                                    </h4>
-
-                                    <p className="card__item-info-txt">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, veniam?
-                                    </p>
-
-                                    <div className="card__item-price">
-                                        $20
-                                    </div>
-                                </div>
-
-                                <button className="card__item-add-btn">
-                                    <span className="card__item-add-btn-txt">
-                                        <i className="fa fa-shopping-bag" aria-hidden="true"></i>
-                                        Add to basket
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className="card__item">
-                            <div className="card__item-img-wrapper">
-                                <div className="card__item-img-overlay">
-                                    <a className="card__item-link" href="#">
-                                        <span className="card__item-link-txt">More Info</span>
-                                    </a>
-                                </div>
-
-                                <img className="card__item-img" src={imgCard} alt=""/>
-                            </div>
-
-                            <div className="card__item-info-wrapper">
-                                <div className="card__item-info">
-                                    <h4 className="card__item-title">
-                                        Lorem ipsum dolor sit.
-                                    </h4>
-
-                                    <p className="card__item-info-txt">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, veniam?
-                                    </p>
-
-                                    <div className="card__item-price">
-                                        $20
-                                    </div>
-                                </div>
-
-                                <button className="card__item-add-btn">
-                                    <span className="card__item-add-btn-txt">
-                                        <i className="fa fa-shopping-bag" aria-hidden="true"></i>
-                                        Add to basket
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    </aside>
                 </div>
             </section>
+
+            <Social />
         </motion.main>
     )
 }

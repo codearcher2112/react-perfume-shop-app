@@ -1,10 +1,16 @@
 import React from "react";
 import logo from "../../assets/logos/logo.png"
 import Navbar from "../Navbar/Navbar";
+import BasketDropdown from "../BasketDropdown/BasketDropdown";
 import { Link } from "react-router-dom";
-import imgCard from "../../assets/images/PikPng.com_perfume-png_1269742.png";
+import { BasketState } from "../../context/Context";
 
 const Header = () => {
+    const {
+        state: { basket },
+        dispatch,
+    } = BasketState()
+
     return (
         <header className="header">
             <div className="container header__container">
@@ -43,35 +49,15 @@ const Header = () => {
                     </li>
 
                     <li className="header__user-interaction-item header__user-interaction-item">
-                        <Link to="/basket" className="header__user-interaction-link header__user-interaction-link--basket">
+                        <div className="header__user-interaction-link header__user-interaction-link--basket">
                             <i className="fa fa-shopping-bag" aria-hidden="true"></i>
 
-                            <span className="header__user-interaction-product-count">8</span>
+                            <div className="header__user-interaction-product-count">
+                                {basket.length}
+                            </div>
 
-                            <span className="header__basket-dropdown-wrapper">
-                                <ul className="header__basket-dropdown">
-                                    <li className="header__basket-dropdown-item">
-                                        <span className="header__basket-dropdown-item-img-wrapper">
-                                            <img className="header__basket-dropdown-item-img" src={imgCard} alt=""/>
-                                        </span>
-
-                                        <span className="header__basket-dropdown-item-info">
-                                            Some Info About product here!
-                                        </span>
-                                    </li>
-
-                                    <li className="header__basket-dropdown-item">
-                                        <span className="header__basket-dropdown-item-img-wrapper">
-                                            <img className="header__basket-dropdown-item-img" src={imgCard} alt=""/>
-                                        </span>
-
-                                        <span className="header__basket-dropdown-item-info">
-                                            Some Info About product here!
-                                        </span>
-                                    </li>
-                                </ul>
-                            </span>
-                        </Link>
+                            <BasketDropdown basket={basket} dispatch={dispatch} />
+                        </div>
                     </li>
                 </ul>
             </div>
