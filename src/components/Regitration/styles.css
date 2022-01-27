@@ -1,0 +1,20 @@
+.registrationWrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.title {
+    font-size: 20px;
+    text-align: center;
+    margin: 16px 4px 8px 4px;
+}
+
+.resisterButton {
+    width: 100%;
+    height: 44px;
+    background: #DF744A;
+    border: 1px;
+    border-radius: 4px;
+    color: white;
+}

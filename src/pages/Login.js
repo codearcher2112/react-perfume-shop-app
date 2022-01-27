@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import LoginForm from '../components/Login/login';
+
 const Login = () => {
     return (
         <motion.main
@@ -9,7 +11,7 @@ const Login = () => {
             transition={{ duration: 0.6 }}
         >
             <div className="container">
-                <h1>Login</h1>
+                <LoginForm />
             </div>
         </motion.main>
     )

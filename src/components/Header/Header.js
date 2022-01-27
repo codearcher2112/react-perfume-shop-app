@@ -4,12 +4,21 @@ import Navbar from "../Navbar/Navbar";
 import BasketDropdown from "../BasketDropdown/BasketDropdown";
 import { Link } from "react-router-dom";
 import { BasketState } from "../../context/Context";
+import {useAuthContext} from '../../context/AuthContext';
 
 const Header = () => {
     const {
         state: { basket },
         dispatch,
     } = BasketState()
+
+    const { user, setUser } = useAuthContext();
+
+    const handleLogout = () => {
+        setUser({});
+    }
+
+    console.log(user, 'user in header');
 
     return (
         <header className="header">
@@ -34,19 +43,29 @@ const Header = () => {
                 <Navbar />
 
                 <ul className="header__user-interaction">
-                    <li className="header__user-interaction-item">
-                        <Link to="/register" className="header__user-interaction-link">
-                            <i className="fa fa-sign-in" aria-hidden="true"></i>
-                            Register
-                        </Link>
-                    </li>
+                    {!user.id ? <>
+                        <li className="header__user-interaction-item">
+                            <Link to="/register" className="header__user-interaction-link">
+                                <i className="fa fa-sign-in" aria-hidden="true"></i>
+                                Register
+                            </Link>
+                        </li>
 
-                    <li className="header__user-interaction-item">
-                        <Link to="/login" className="header__user-interaction-link">
-                            <i className="fa fa-user" aria-hidden="true"></i>
-                            Log In
-                        </Link>
-                    </li>
+                        <li className="header__user-interaction-item">
+                            <Link to="/login" className="header__user-interaction-link">
+                                <i className="fa fa-user" aria-hidden="true"></i>
+                                Log In
+                            </Link>
+                        </li>
+                    </> : <>
+                        <li className="header__user-interaction-item">
+                            <span onClick={handleLogout} className="header__user-interaction-link">
+                                <i className="fa fa-user" aria-hidden="true"></i>
+                                Log Out
+                            </span>
+                        </li>
+                    </>
+                    }
 
                     <li className="header__user-interaction-item header__user-interaction-item">
                         <div className="header__user-interaction-link header__user-interaction-link--basket">
@@ -55,7 +74,6 @@ const Header = () => {
                             <div className="header__user-interaction-product-count">
                                 {basket.length}
                             </div>
-
                             <BasketDropdown basket={basket} dispatch={dispatch} />
                         </div>
                     </li>

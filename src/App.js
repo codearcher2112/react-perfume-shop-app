@@ -4,7 +4,6 @@ import { AnimatePresence } from "framer-motion";
 
 import Header from "./components/Header/Header";
 import AdSection from "./components/AdSection/AdSection";
-import Footer from "./components/Footer/Footer";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -15,6 +14,9 @@ import Profile from "./pages/Profile";
 import Product from "./pages/Product";
 import Basket from "./pages/Basket";
 import ErrorPage from "./pages/ErrorPage";
+import { AuthProvider } from './context/AuthContext';
+import WithAuth from './context/withAuth';
+import {FooterContainer} from './pages/Footer';
 
 
 function App() {
@@ -22,25 +24,24 @@ function App() {
 
     return (
         <div className="App">
+            <AuthProvider>
             <Header />
-
             <AnimatePresence exitBeforeEnter initial={false}>
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/about" element={<WithAuth><About /></WithAuth>} />
+                    <Route path="/contact" element={<WithAuth><Contact /></WithAuth>} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/profile/:username" element={<Profile />} />
+                    <Route path="/profile/:username" element={<WithAuth><Profile /></WithAuth>} />
                     <Route path="/product/:id" element={<Product />} />
                     <Route path="/basket" element={<Basket />} />
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </AnimatePresence>
-
             <AdSection />
-
-            <Footer />
+            <FooterContainer />
+            </AuthProvider>
         </div>
     );
 }

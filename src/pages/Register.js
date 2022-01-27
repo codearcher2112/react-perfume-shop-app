@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import { Registration } from '../components/Regitration/registration';
+
 const Register = () => {
     return (
         <motion.main
@@ -9,7 +11,7 @@ const Register = () => {
             transition={{ duration: 0.6 }}
         >
             <div className="container">
-                <h1>Register</h1>
+                <Registration />
             </div>
         </motion.main>
     )

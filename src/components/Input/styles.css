@@ -1,0 +1,29 @@
+.wrapper {
+    margin: 2px;
+    height: 66px;
+}
+
+.input {
+    height: 44px;
+    padding: 11px 12px 13px 12px ;
+    font-size: 18px;
+    border-radius: 4px;
+    border: 1px solid #aaaaaa;
+
+}
+
+.errorElement {
+    align-items: baseline;
+    color: #DF744A;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.error {
+    border-color: #DF744A;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
