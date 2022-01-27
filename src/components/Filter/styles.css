@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.filterContainer{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.products{
+    /* height: 300px;
+    width: 200px; */
+    height: 50px;
+    width: 50px;
+    background-color: blanchedalmond;
+    color: yellowgreen;
+    margin: 10px;
+    text-align: center;
+    border-radius: .5rem;
+    border: .15rem solid rgba(0, 0, 0, .2);
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination button{
+    background-color: blanchedalmond;
+    color: yellowgreen;
+    font-weight: bold;
+    margin: 10px;
+    border-radius: .5rem;
+    border: .15rem solid rgba(0, 0, 0, .2);
+}
+
+.pagination button:hover{
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+    box-shadow: 0 0 1rem #666;
+}
+
+.pagination span:hover{
+    text-decoration: underline;
+}
+
+
+.filter{
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    border: .15rem solid rgba(0, 0, 0, .2);
+    border-radius: .5rem;
+    color: yellowgreen;
+    padding: 1rem;
+}
+
+.brands,
+.price,
+.fastDelivery{
+    padding: .5rem;
+}
+
+.brands h3,
+.price h3{
+    margin: 0;
+    text-align: center;
+}
+
+.price,
+.fastDelivery{
+    border-top: .15rem solid rgba(0, 0, 0, .2);
+}
+
+.priceInput{
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
+.priceInput input{
+    width: 5rem;
+}
+
+.filterBtn{
+    background-color: blanchedalmond;
+    margin: .5rem;
+    border: .15rem solid rgba(0, 0, 0, .2);
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    padding: .3rem;
+    color: yellowgreen;
+}
+
+.filterBtn:hover{
+    background-color: blanchedalmond;
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+    box-shadow: 0 0 1rem #666;
+}
+
+.fastDelivery,
+.minMax{
+    display: flex;
+    justify-content: space-between;
+}
+
+select{
+    border-radius: .3rem;
+    color: yellowgreen;
+}
+
+form{
+    display: inline;
+}
+
+.sort{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}

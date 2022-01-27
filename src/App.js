@@ -17,6 +17,7 @@ import ErrorPage from "./pages/ErrorPage";
 import { AuthProvider } from './context/AuthContext';
 import WithAuth from './context/withAuth';
 import {FooterContainer} from './pages/Footer';
+import Products from './pages/Products';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/profile/:username" element={<WithAuth><Profile /></WithAuth>} />
                     <Route path="/product/:id" element={<Product />} />
+                    <Route path="/products" element={<Products />} />
                     <Route path="/basket" element={<Basket />} />
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>

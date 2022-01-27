@@ -1,0 +1,25 @@
+.autocomplete{
+    position: absolute;
+    left: 0;
+    top: 30px;
+    list-style: none;
+    width: 100%;
+    background: white;
+    margin: 0;
+    padding: 0;
+    z-index: 111;
+    max-height: 240px;
+    height:auto ;
+    overflow: auto;
+    box-shadow:1px 1px 5px rgb(173, 126, 173);
+}
+
+.autocomplete_item{
+    padding: 10px;
+}
+
+.autocomplete_item:hover{
+    background: rgb(114, 96, 114);
+    cursor: pointer;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
