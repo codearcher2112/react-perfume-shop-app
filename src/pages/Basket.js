@@ -32,7 +32,7 @@ const Basket = () => {
                                         </div>
 
                                         <h4 className="basket__item-title">
-                                            {prod.name}
+                                            {prod.brand}
                                         </h4>
 
                                         <div className="basket__item-price">

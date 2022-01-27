@@ -1,6 +1,7 @@
 import React from "react";
 import { BasketState } from "../../context/Context";
 import { Link } from "react-router-dom";
+import Rating from "../Rating/Rating";
 
 const ProductItem = ({prod}) => {
     const {
@@ -17,34 +18,40 @@ const ProductItem = ({prod}) => {
                     </Link>
                 </div>
 
-                <img className="product__item-img" src={prod.imgSrc} alt={prod.name} />
+                <img className="product__item-img" src={prod.imgSrc} alt={prod.brand} />
             </div>
 
             <div className="product__item-info-wrapper">
-                <div className="product__item-info">
-                    <h4 className="product__item-title">
-                        {prod.name}
-                    </h4>
+                <h4 className="product__item-title">
+                    {prod.brand}
+                </h4>
 
-                    <p className="product__item-info-txt">
-                        {prod.desc}
-                    </p>
+                <h5 className="product__item-name">
+                    {prod.name}
+                </h5>
 
-                    {
-                        prod.fastDelivery ? (
-                            <div className="product__item-delivery">
-                                Fast Delivery
-                            </div>
-                        ) : (
-                            <div className="product__item-delivery">
-                                2 Days Delivery
-                            </div>
-                        )
-                    }
+                <p className="product__item-info-txt">
+                    {prod.desc}
+                </p>
 
-                    <div className="product__item-price">
-                        {prod.price}$
-                    </div>
+                {
+                    prod.fastDelivery ? (
+                        <div className="product__item-delivery">
+                            Fast Delivery
+                        </div>
+                    ) : (
+                        <div className="product__item-delivery">
+                            2 Days Delivery
+                        </div>
+                    )
+                }
+
+                <div className="product__item-rating-wrapper">
+                    <Rating rating={prod.ratings} />
+                </div>
+
+                <div className="product__item-price">
+                    {prod.price}$
                 </div>
 
                 {
