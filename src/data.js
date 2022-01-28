@@ -1,6 +1,6 @@
 export const productData = [
 	{
-		"id": "1",
+		"id": 1,
 		"brand": "Carolina Herrera",
 		"name": "good girl",
 		"price": 80,
@@ -8,7 +8,7 @@ export const productData = [
 		"imgSrc": "https://goldapple.ru/media/catalog/product/8/4/8411061819838_1_tginxynyoinw697m.jpg"
 	},
 	{
-		"id": "2",
+		"id": 2,
 		"brand": "Carolina Herrera",
 		"name": "ch men",
 		"price": 110,
@@ -16,7 +16,7 @@ export const productData = [
 		"imgSrc": "https://goldapple.ru/media/catalog/product/8/4/8411061665022_1_xp745kogl5i4azc8.jpg"
 	},
 	{
-		"id": "3",
+		"id": 3,
 		"brand": "Carolina Herrera",
 		"name": "good girl légère",
 		"price": 120,
@@ -24,7 +24,7 @@ export const productData = [
 		"imgSrc": "https://goldapple.ru/media/catalog/product/cache/fb5d06f7acfb2f26f85333624ccbfb5e/8/4/8411061907580_1_axryly82eufvlyic.jpg"
 	},
 	{
-		"id": "4",
+		"id": 4,
 		"brand": "Carolina Herrera",
 		"name": "bad boy le parfum",
 		"price": 160,
@@ -32,7 +32,7 @@ export const productData = [
 		"imgSrc": "https://goldapple.ru/media/catalog/product/cache/fb5d06f7acfb2f26f85333624ccbfb5e/8/4/8411061991886_1_n9mxwfqew14fqviw.jpg"
 	},
 	{
-		"id": "5",
+		"id": 5,
 		"brand": "Carolina Herrera",
 		"name": "212vip",
 		"price": 89,

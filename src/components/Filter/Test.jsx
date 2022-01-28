@@ -129,16 +129,17 @@ function Test() {
     }
 
     if(filterInfo.sort === 1){
-      result.sort((a, b) => a.prices - b.prices)
+      result.sort((a, b) => a.price - b.price)
     }else{
-      result.sort((a, b) => b.prices - a.prices)
+      result.sort((a, b) => b.price - a.price)
     }
     
     if(filterInfo.min !==0 && filterInfo.max!==0){
-      result = result.filter(item => (item.prices >= filterInfo.min && item.prices <= filterInfo.max))
+      result = result.filter(item => (item.price >= filterInfo.min && item.price <= filterInfo.max))
     }
     
     setProducts(result)
+    console.log(result);
   }
 
   useEffect(() => setRenderProducts(products.filter((item, index) => index+1 <=10 * pageNumber && index+1 > 10 * pageNumber-10)), [pageNumber, products])
