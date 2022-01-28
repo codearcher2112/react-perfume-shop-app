@@ -18,8 +18,6 @@ const Header = () => {
         setUser({});
     }
 
-    console.log(user, 'user in header');
-
     return (
         <header className="header">
             <div className="container header__container">

@@ -2,12 +2,11 @@ import { useState, useEffect } from "react";
 import Pagination from "./pagination";
 import Products from "./products";
 import Filter from "./filter";
-
-
 import './styles.css';
 import {productData} from '../../data';
+import Search from "../Search/Search";
 
-function Test() {
+function ProductList() {
   const [products, setProducts] = useState([])
   const [renderedProducts, setRenderProducts] = useState([])
   const [pageNumber, setPageNumber] = useState(1)  
@@ -24,6 +23,8 @@ function Test() {
     rate: 0,
     sort: 0
   })
+  const [inputValue, setInputValue] = useState("");
+  
   
 
   const handleClickNumber = (e) => {
@@ -139,22 +140,38 @@ function Test() {
     }
     
     setProducts(result)
-    console.log(result);
   }
 
   useEffect(() => setRenderProducts(products.filter((item, index) => index+1 <=10 * pageNumber && index+1 > 10 * pageNumber-10)), [pageNumber, products])
 
   useEffect(() => setProducts(productData), [])
 
+  const inputHandleChange = (e) => {
+    setInputValue(e.target.value)
+    let filteredData = []
+    if(e.target.value.length > 2){
+      filteredData = productData.filter(item => item.brand.toLowerCase().includes(e.target.value))
+      setProducts(filteredData) 
+    }
+    if(e.target.value.length === 0){
+      setProducts(productData)
+    }
+  }
+
   return (
-    <div className="filterContainer">
-      <Filter handleChangeChBox={handleChangeChBox} handleChangePrice={handleChangePrice} handleClickFilterBtn={handleClickFilterBtn} handleChangeRate={handleChangeRate} handleChangeSort={handleChangeSort}/>
-      <div>
-      <Products renderedProducts={renderedProducts}/>
-      <Pagination handleClickNumber={handleClickNumber} handleClickButton={handleClickButton} pageNumber={pageNumber} products={products} />      
+    <div className="filterContainer">      
+      <div className="container filter-container">
+        <aside className="aside">
+          <Search inputValue={inputValue} inputHandleChange={inputHandleChange}/>
+          <Filter handleChangeChBox={handleChangeChBox} handleChangePrice={handleChangePrice} handleClickFilterBtn={handleClickFilterBtn} handleChangeRate={handleChangeRate} handleChangeSort={handleChangeSort}/>
+        </aside>
+        <div className="aside-left">
+          <Products renderedProducts={renderedProducts}/>
+          <Pagination handleClickNumber={handleClickNumber} handleClickButton={handleClickButton} pageNumber={pageNumber} products={products} />
+        </div>
       </div>
     </div>
   )
 }
 
-export default Test;
+export default ProductList;

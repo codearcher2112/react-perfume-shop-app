@@ -12,30 +12,20 @@ code {
     monospace;
 }
 
-.filterContainer{
-    display: flex;
-    flex-direction: row;
-    /* align-items: center; */
-    justify-content: center;
-}
 
-.container{
+.filter-container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    padding: 75px 0;
 }
 
 .products{
-    /* height: 300px;
-    width: 200px; */
     height: 50px;
     width: 50px;
-    background-color: blanchedalmond;
-    color: yellowgreen;
-    margin: 10px;
+    background-color: #fff;
+    color: #DF744A;
     text-align: center;
-    border-radius: .5rem;
-    border: .15rem solid rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .2);
 }
 
 .pagination{
@@ -46,11 +36,11 @@ code {
 
 .pagination button{
     background-color: blanchedalmond;
-    color: yellowgreen;
+    color: #DF744A;
     font-weight: bold;
     margin: 10px;
-    border-radius: .5rem;
-    border: .15rem solid rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .2);
 }
 
 .pagination button:hover{
@@ -64,16 +54,23 @@ code {
     text-decoration: underline;
 }
 
-
-.filter{
-    background-color: blanchedalmond;
+.filter,
+.search{
+    position: sticky;
+    top: 120px;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
-    margin: 1rem;
-    border: .15rem solid rgba(0, 0, 0, .2);
-    border-radius: .5rem;
-    color: yellowgreen;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    color: #DF744A;
     padding: 1rem;
+}
+
+.aside-left {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 75%;
 }
 
 .brands,
@@ -88,9 +85,14 @@ code {
     text-align: center;
 }
 
+.fastDelivery label,
+.brands label {
+    margin-left: 8px;
+}
+
 .price,
-.fastDelivery{
-    border-top: .15rem solid rgba(0, 0, 0, .2);
+.fastDelivery {
+    border-top: 1px solid rgba(0, 0, 0, .2);
 }
 
 .priceInput{
@@ -104,20 +106,20 @@ code {
 }
 
 .filterBtn{
-    background-color: blanchedalmond;
+    background-color: #fff;
     margin: .5rem;
-    border: .15rem solid rgba(0, 0, 0, .2);
-    border-radius: .5rem;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 4px;
     font-size: 1.2rem;
     padding: .3rem;
-    color: yellowgreen;
+    color: #DF744A;
+    transition: all .3s ease-in-out;
 }
 
 .filterBtn:hover{
-    background-color: blanchedalmond;
-    color: red;
+    background-color:  #DF744A;
+    color: #fff;
     cursor: pointer;
-    text-decoration: underline;
     box-shadow: 0 0 1rem #666;
 }
 
@@ -129,7 +131,7 @@ code {
 
 select{
     border-radius: .3rem;
-    color: yellowgreen;
+    color: #DF744A;
 }
 
 form{

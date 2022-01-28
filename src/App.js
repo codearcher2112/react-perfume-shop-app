@@ -35,7 +35,7 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/profile/:username" element={<WithAuth><Profile /></WithAuth>} />
-                    <Route path="/product/:id" element={<Product />} />
+                    <Route path="/product" element={<Product />} />
                     <Route path="/products" element={<Products />} />
                     <Route path="/basket" element={<Basket />} />
                     <Route path="*" element={<ErrorPage />} />

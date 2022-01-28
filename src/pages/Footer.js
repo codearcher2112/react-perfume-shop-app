@@ -12,7 +12,7 @@ export function FooterContainer() {
 						<Footer.Link href='https://www.dior.com/en_int'> Christian Dior </Footer.Link>
 						<Footer.Link href='https://www.carolinaherrera.com/ww/en/'> Carolina Herrera </Footer.Link>
 						<Footer.Link href='https://www.hugoboss.com/home'> Hugo Boss </Footer.Link>
-						<Footer.Link href='a'> Jimmy Choo </Footer.Link>
+						<Footer.Link href='#'> Jimmy Choo </Footer.Link>
 						<Footer.Link href='https://www.armani.com/countries/index'> Armani </Footer.Link>
 						<Footer.Link href='https://www.chanel.com/ru/'> Chanel </Footer.Link>
 					</Footer.Column>
@@ -24,16 +24,16 @@ export function FooterContainer() {
 					</Footer.Column>
 					<Footer.Column>
 						<Footer.Title> Payment </Footer.Title>
-						<Footer.Link href='a'> <Icon className="fab fa-cc-visa"/> Visa card </Footer.Link>
-						<Footer.Link href='a'> <Icon className="fab fa-cc-mastercard"/> Master Card </Footer.Link>
-						<Footer.Link href='a'> <Icon className="fab fa-cc-paypal"/> PayPal </Footer.Link>
-						<Footer.Link href='a'> <Icon className="fab fa-cc-apple-pay"/> Apple Pay </Footer.Link>
+						<Footer.Link href='#'> <Icon className="fab fa-cc-visa"/> Visa card </Footer.Link>
+						<Footer.Link href='#'> <Icon className="fab fa-cc-mastercard"/> Master Card </Footer.Link>
+						<Footer.Link href='#'> <Icon className="fab fa-cc-paypal"/> PayPal </Footer.Link>
+						<Footer.Link href='#'> <Icon className="fab fa-cc-apple-pay"/> Apple Pay </Footer.Link>
 					</Footer.Column>
 					<Footer.Column>
 						<Footer.Title> Help </Footer.Title>
-						<Footer.Link href='a'> About Us </Footer.Link>
-						<Footer.Link href='a'> Armenia, Yerevan </Footer.Link>
-						<Footer.Link href='a'> <Icon className="fas fa-phone-square-alt"/> +374-98-704-049 </Footer.Link>
+						<Footer.Link href='#'> About Us </Footer.Link>
+						<Footer.Link href='#'> Armenia, Yerevan </Footer.Link>
+						<Footer.Link href='#'> <Icon className="fas fa-phone-square-alt"/> +374-98-704-049 </Footer.Link>
 					</Footer.Column>
 				</Footer.Row>
 			</Footer.Wrapper>
