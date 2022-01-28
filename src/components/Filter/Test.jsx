@@ -147,10 +147,14 @@ function Test() {
 
   return (
     <div className="filterContainer">
-      <Filter handleChangeChBox={handleChangeChBox} handleChangePrice={handleChangePrice} handleClickFilterBtn={handleClickFilterBtn} handleChangeRate={handleChangeRate} handleChangeSort={handleChangeSort}/>
-      <div>
-      <Products renderedProducts={renderedProducts}/>
-      <Pagination handleClickNumber={handleClickNumber} handleClickButton={handleClickButton} pageNumber={pageNumber} products={products} />      
+      <div className="container filter-container">
+        <aside className="aside">
+          <Filter handleChangeChBox={handleChangeChBox} handleChangePrice={handleChangePrice} handleClickFilterBtn={handleClickFilterBtn} handleChangeRate={handleChangeRate} handleChangeSort={handleChangeSort}/>
+        </aside>
+        <div>
+          <Products renderedProducts={renderedProducts}/>
+          <Pagination handleClickNumber={handleClickNumber} handleClickButton={handleClickButton} pageNumber={pageNumber} products={products} />
+        </div>
       </div>
     </div>
   )

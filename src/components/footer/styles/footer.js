@@ -1,28 +1,26 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    padding: 30px 20px;
-    background: black;
+    padding: 45px 0;
+    background: #333333;
 `
 
 export const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 1000px;
+    max-width: 1305px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 15px;
 `
 
 export const Column = styled.div`
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin-left: 60px;
 `
 
 export const Row = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
 
     @media (max-width: 1000px) {
