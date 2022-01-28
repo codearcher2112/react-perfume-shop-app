@@ -81,6 +81,12 @@ code {
     padding: 1rem;
 }
 
+.aside-left {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 75%;
+}
+
 .brands,
 .price,
 .fastDelivery{

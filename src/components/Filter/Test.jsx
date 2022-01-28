@@ -151,7 +151,7 @@ function Test() {
         <aside className="aside">
           <Filter handleChangeChBox={handleChangeChBox} handleChangePrice={handleChangePrice} handleClickFilterBtn={handleClickFilterBtn} handleChangeRate={handleChangeRate} handleChangeSort={handleChangeSort}/>
         </aside>
-        <div>
+        <div className="aside-left">
           <Products renderedProducts={renderedProducts}/>
           <Pagination handleClickNumber={handleClickNumber} handleClickButton={handleClickButton} pageNumber={pageNumber} products={products} />
         </div>
