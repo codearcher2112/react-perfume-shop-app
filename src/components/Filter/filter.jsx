@@ -10,13 +10,13 @@ function Filter({handleChangeChBox, handleChangePrice, handleClickFilterBtn, han
                 </div>
 
                 <div>
-                    <input type="checkbox" id="brand2" onChange={handleChangeChBox} />
-                    <label htmlFor="brand2">Brand2</label>
+                    <input type="checkbox" id="Chanel" onChange={handleChangeChBox} />
+                    <label htmlFor="Chanel">Chanel</label>
                 </div>
 
                 <div>
-                    <input type="checkbox" id="brand3" onChange={handleChangeChBox} />
-                    <label htmlFor="brand3">Brand3</label>
+                    <input type="checkbox" id="Hugo" onChange={handleChangeChBox} />
+                    <label htmlFor="Hugo">Hugo</label>
                 </div>
 
                 <div>

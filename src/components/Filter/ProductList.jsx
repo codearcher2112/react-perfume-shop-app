@@ -84,11 +84,11 @@ function ProductList() {
     if(filterInfo.Armani){
       result.push(...productData.filter(item => item.brand === 'Armani'))
     }
-    if(filterInfo.brand2){
-      result.push(...productData.filter(item => item.brand === 'brand 2'))
+    if(filterInfo.Chanel){
+      result.push(...productData.filter(item => item.brand === 'Chanel'))
     }
-    if(filterInfo.brand3){
-      result.push(...productData.filter(item => item.brand === 'brand 3'))
+    if(filterInfo.Hugo){
+      result.push(...productData.filter(item => item.brand === 'Hugo'))
     }
     if(filterInfo.brand4){
       result.push(...productData.filter(item => item.brand === 'brand 4'))
