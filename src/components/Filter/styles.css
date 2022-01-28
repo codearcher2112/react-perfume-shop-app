@@ -70,6 +70,8 @@ code {
 
 
 .filter{
+    position: sticky;
+    top: 120px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
